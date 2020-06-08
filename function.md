@@ -4,16 +4,16 @@
 
 ```rust
 // Both works, understand the differences!
-fn with_array(_a: [&str; 3]) {
+fn with_array(_a: [&str; 3]) {// <- size
 }
 
-fn with_slice(_a: &[&str]) {
+fn with_borrowed_str_array(_a: &[&str]) {// <- no size
 }
 
 fn main() {
     let a = ["one", "two", "three"];
     with_array(a);
-    with_slice(&a);
+    with_borrowed_str_array(&a);
 }
 ```
 
